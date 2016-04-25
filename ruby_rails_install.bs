@@ -1,3 +1,5 @@
+export http_proxy=proxy.upd.edu.ph:8080
+
 echo "proxy=proxy.upd.edu.ph:8080" >> /root/.curlrc
 
 yum update gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel ruby-devel libxml2 libxml2-devel libxslt libxslt-devel git curl make
