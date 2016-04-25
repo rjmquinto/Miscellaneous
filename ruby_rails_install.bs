@@ -1,7 +1,25 @@
-sudo apt-get update ; sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+echo "proxy=proxy.upd.edu.ph:8080" >> /root/.curlrc
 
-sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev ; curl -L https://get.rvm.io | bash -s stable ; source ~/.rvm/scripts/rvm ; rvm install 2.3.0 ; rvm use 2.3.0 --default ; ruby -v
+yum update gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel ruby-devel libxml2 libxml2-devel libxslt libxslt-devel git curl make
+
+yum -y install gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel ruby-devel libxml2 libxml2-devel libxslt libxslt-devel git curl make
+
+export rvm_proxy=proxy.upd.edu.ph:8080
+
+command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+
+curl -L https://get.rvm.io | bash -s stable
+
+source /usr/local/rvm/scripts/rvm
+
+rvm install 2.2.1
+rvm use 2.2.1 --default
 
 gem install bundler
 
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - ; sudo apt-get install -y nodejs
+curl -sL https://rpm.nodesource.com/setup_4.x | bash -
+
+yum -y install nodejs
+
+gem install rails -v 4.2.6
+
